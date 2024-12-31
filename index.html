@@ -5,86 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
-{margin: 0; padding: 0;}
-a {color: #333; text-decoration: none;}
+        * {margin: 0; padding: 0;}
+        a {color: #333; text-decoration: none;} /* a태그 자체의 기본스타일을 다르게 해줌  */
 
-        .face_box {width: 130px; height: auto;  margin: 40px auto 0 auto; z-index: 2; position: relative;}
-        .face {width: 130px; height: 130px;  border-radius: 50%; overflow: hidden;}
-        .name {margin-top: 14px; font-size: 24px; text-align: center; color: #fff;}
-        .name a {color: #fff;} /* 네임공간 안에 들어있는 a태그의 글자색상은 흰색 */
-        .job {font-size: 15px; text-align: center; color: #fff;}
 
-        .button_box {width: 230px; height: auto; margin: 34px auto 0 auto; text-align: center; z-index: 2; position: relative;}
-        /* .button_box a {border: 1px solid #000; display: block; width: 190px; height: 38px; text-align: center; line-height: 38px; margin: 0 auto 25px auto; border-radius: 20px;} */
-        .button_box a {border: 1px solid #000; padding: 8px 60px; display: inline-block; margin-bottom: 25px;border-radius: 20px;}
-        .button_box .button1 {background: #fcd8d8;}
-        .button_box .button2 {background: #f4e5b3;}
-        .button_box .button3 {background: #c1df96;}
-        .button_box .button4 {background: #9fb9ea;}
+        .face_box {width: 130px; /* height: 190px; */  margin: 40px auto 0 auto; z-index: 2; position: relative;}
+          .face {width: 130px; height: 130px;  border-radius: 50%; 
+             overflow: hidden;}
+          .name {font-size: 24px; margin-top: 14px;  text-align: center;}
+          .job {font-size: 15px; text-align: center; color: #fff;} 
+          .name a {color: #fff;}
+
+
+        .button_box {width: 230px; /* height: 230px; */ margin: 34px auto 0 auto;  text-align: center; z-index: 2; position: relative;}
+        /*.button_box a {border: 1px solid #000; display: block; width: 190px; height: 38px; text-align: center;  line-height: 38px; margin: 0 auto 25px auto; border-radius: 20px ;} button_box의 자식인 a태그만 골라서 스타일 적용. 이름의 a태그는 그냥 링크만 걸어주는 것 */ 
+        .button_box a { padding: 8px 60px; display: inline-block; margin-bottom: 25px; border-radius: 20px;}
+        /* 안에 적힌 글씨양에 따라 늘어나야 하니, 크기지정된 display:block을 줄 수 없음. */
+        .button1 {background: #F0E5DE;}
+        .button2 {background: #f8ecc9;}
+        .button3 {background: #FADAD8;}
+        .button4 {background: #534847; color: white;}
+
+
+
 
         .map_box {width: 300px; height: 400px; margin: 64px auto 100px auto;  z-index: 2; position: relative;}
-        .map_box .title {font-size: 24px; text-align: center; color: #fff;}
-        .map_box .box {width: 300px; height: 350px; border: 1px solid #000; margin-top: 20px; border-radius: 20px; overflow: hidden; } /* 클리핑마스크 */
+        .title {font-size: 18px; text-align: center; }
+        .box {width: 300px; height: 350px;  margin-top: 20px; border-radius:20px; overflow: hidden;}
 
-        .docbar {width: 100%; /* 폭은 화면에 꽉 차게 */height: 64px; background: #ddd; text-align: center; position: fixed; /* 위치값을 고정 */ bottom: 0; /* 아래로 바짝 붙여라 */ z-index:20;}
-        .docbar a {width: 44px; height: 44px; background: #000; display: inline-block; /*  */ border-radius: 50%;} /* 독바 (띄어쓰기='자손') a : 독바 안에 들어있는 자손들(아들이하로) 중에 a태그  */
 
-        .circle {width: 700px; height: 700px; border-radius: 50%; background: #000; position: fixed; left: -300px;  top: -150px  ; overflow: hidden;}
-        .circle img {width: 100%;}
+
+        .docbar {width: 100%; height: 64px; background: #ddd; position: fixed; bottom: 0px; text-align: center; z-index: 20;}
+        .docbar a {width: 44px; height: 44px; background: #000; display: inline-block; border-radius: 50%;}
+
+
+        
+        
+        .circle {width: 700px; height: 700px; border-radius: 50%; background: pink; position:fixed; left: -300px; top: -150px; overflow: hidden;}
+        .circle img {width: 120%;} /* w나 h를 부모인 .circle에 맞추면 됨 w700(100%), h700(100%) */
+
+
     </style>
 </head>
+
+
+
+
 <body>
     <div class="face_box">
         <div class="face">
-            <img src="images/lauren.png" alt="robert">
+            <img src="images/[크기변환]IMG_4275.jpg" alt="Seung2"> <!-- 이미지 주소, 이미지 글로 설명 -->
         </div>
-        <div class="name"><a href="#">Robert</a></div>
+        <div class="name"><a href="#">Seung2</a></div>
         <div class="job">Webdesigner</div>
     </div>
+    
 
     <div class="button_box">
         <a href="tel:01045982874" class="button1">전화 문의</a>
-        <a href="sms:010-4598-2874" class="button2">문자 문의</a>
-        <a href="#" class="button3">카카오톡 문의</a>
+        <a href="sms:01045982874" class="button2">문자 문의</a>
+        <a href="" class="button3">카카오톡 문의</a>
         <a href="mailTo:a3paaa@naver.com" class="button4">이메일 문의</a>
     </div>
+    
 
     <div class="map_box">
         <div class="title">오시는 길</div>
         <div class="box">
-            <!-- * 카카오맵 - 지도퍼가기 -->
-            <!-- 1. 지도 노드 -->
-            <div id="daumRoughmapContainer1735030340254" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                        <!-- * 카카오맵 - 지도퍼가기 -->
+                        <!-- 1. 지도 노드 -->
+                        <div id="daumRoughmapContainer1735635864722" class="root_daum_roughmap root_daum_roughmap_landing"></div>
 
-            <!--
-                2. 설치 스크립트
-                * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-            -->
-            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                        <!--
+                            2. 설치 스크립트
+                            * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+                        -->
+                        <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 
-            <!-- 3. 실행 스크립트 -->
-            <script charset="UTF-8">
-                new daum.roughmap.Lander({
-                    "timestamp" : "1735030340254",
-                    "key" : "2mmd6",
-                    "mapWidth" : "300",
-                    "mapHeight" : "360"
-                }).render();
-            </script>
+                        <!-- 3. 실행 스크립트 -->
+                        <script charset="UTF-8">
+                            new daum.roughmap.Lander({
+                                "timestamp" : "1735635864722",
+                                "key" : "2mnyo",
+                                "mapWidth" : "300",
+                                "mapHeight" : "350"
+                            }).render();
+                        </script>                                      <!-- 글 마지막에 커서 두고, 시프트+시작할 부분 클릭하면 전체가 활성화됨. 탭탭하면 들어가서 쉽게 구분정리가능 -->
         </div>
+
     </div>
 
+    
     <div class="docbar">
-        <a href="#">1</a> <!-- #은 임시로 적는 값 -->
-        <a href="#">2</a> 
-        <a href="#">3</a> 
-        <a href="#">4</a> 
-        <a href="#">5</a> 
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
     </div>
+
+
 
     <div class="circle">
-        <img src="images/bg_christmas.png" alt="">
+        <img src="images/bg_flower.jpg" alt="">
     </div>
+
 </body>
 </html>
